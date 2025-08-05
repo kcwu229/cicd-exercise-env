@@ -9,6 +9,7 @@ env:
 
 jobs:
   test:
+    environment: testing
     env:
       PORT: 8080
       MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
