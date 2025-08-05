@@ -5,15 +5,15 @@ on:
       - master
       - dev
 env:
-  MONGODB_DB_NAME: gha-demo
+  MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}
 
 jobs:
   test:
     env:
       PORT: 8080
-      MONGODB_CLUSTER_ADDRESS: nodejstutorial.s6yce.mongodb.net
-      MONGODB_USERNAME: samsam123
-      MONGODB_PASSWORD: Pk123456
+      MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
